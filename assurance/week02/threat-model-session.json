@@ -1,0 +1,77 @@
+{
+  "v": 2,
+  "checks": {
+    "c3": true,
+    "c4": true,
+    "c5": true
+  },
+  "els": [
+    {
+      "name": "Customer",
+      "type": "External entity",
+      "zone": "User's browser"
+    },
+    {
+      "name": "Web application",
+      "type": "Process",
+      "zone": "Application server"
+    },
+    {
+      "name": "Login service",
+      "type": "Process",
+      "zone": "Application server"
+    },
+    {
+      "name": "Product database",
+      "type": "Data store",
+      "zone": "Data store"
+    },
+    {
+      "name": "Uploaded files",
+      "type": "Data store",
+      "zone": "Data store"
+    }
+  ],
+  "flows": [
+    {
+      "from": "Customer",
+      "to": "Login service",
+      "data": "email address and password"
+    },
+    {
+      "from": "Login service",
+      "to": "Customer",
+      "data": "session token in a cookie"
+    },
+    {
+      "from": "Customer",
+      "to": "Web application",
+      "data": "search terms and order details"
+    },
+    {
+      "from": "Web application",
+      "to": "Product database",
+      "data": "product and order records"
+    }
+  ],
+  "tb": {},
+  "stride": {},
+  "mission": "",
+  "ab": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "q": {},
+  "ctest": "",
+  "ref": {},
+  "memo": {},
+  "step": 2,
+  "done": {
+    "started": true,
+    "session": true
+  }
+}
